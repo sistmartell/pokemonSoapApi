@@ -1,0 +1,153 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="https://pokeapi.co/docs/v2"
+	targetNamespace="https://pokeapi.co/docs/v2"
+	elementFormDefault="qualified">
+
+
+
+	<xs:complexType name="AbilitiesType">
+		<xs:sequence>
+			<xs:element name="ability" type="tns:ability" />
+			<xs:element name="slot" type="xs:long" />
+			<xs:element name="_hidden" type="xs:boolean" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Held_itemsType">
+		<xs:sequence>
+			<xs:element type="tns:version_details" minOccurs="0"
+				maxOccurs="unbounded" name="version_details" />
+			<xs:element name="item" type="tns:item" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="version_details">
+		<xs:sequence>
+			<xs:element name="version" type="tns:version" />
+			<xs:element name="rarity" type="xs:long" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ability">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="url" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="item">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="url" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="version">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="url" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="getAbilitiesRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getAbilitiesResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="tns:AbilitiesType" minOccurs="0"
+					maxOccurs="unbounded" name="abilities" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getBaseExperienceRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getBaseExperienceResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="base_experience" type="xs:long" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getHeld_itemsRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getHeld_itemsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="tns:Held_itemsType" minOccurs="0"
+					maxOccurs="unbounded" name="held_items" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getIdRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getIdResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:long" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getNameRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getNameResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getLocation_area_encountersRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+
+	<xs:element name="getLocation_area_encountersResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="location_area_encounters"
+					type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>
